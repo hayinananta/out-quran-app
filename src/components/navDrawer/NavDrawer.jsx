@@ -7,7 +7,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { Link } from "react-scroll";
 import "./NavDrawer.scss";
 export default function NavDrawer({ anchor, open, handleClose, handleOpen }) {
-  // ! drawer items
+  // * Items nav
   const list = (anchor) => (
     <div role="presentation" onClick={handleClose} onKeyDown={handleClose}>
       <List>

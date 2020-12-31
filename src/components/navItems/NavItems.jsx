@@ -4,6 +4,7 @@ import { Hidden } from "@material-ui/core";
 import "./NavItems.scss";
 
 export default function NavItems() {
+  // Method for create nav item
   const list = () => {
     return (
       <>
@@ -14,7 +15,6 @@ export default function NavItems() {
             activeClass="active"
             spy={true}
             smooth={true}
-            hashSpy={true}
             className="nav-link"
           >
             {text}
