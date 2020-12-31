@@ -1,0 +1,19 @@
+#nav-items {
+  & > .active {
+    color: #3e8a8e;
+  }
+
+  .nav-link {
+    cursor: pointer;
+    color: #4f4f4f;
+    margin-right: 30px;
+
+    &:hover {
+      color: #3e8a8e;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+import React from "react";
+
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import { Link } from "react-scroll";
+import "./NavDrawer.scss";
+export default function NavDrawer({ anchor, open, handleClose, handleOpen }) {
+  // ! drawer items
+  const list = (anchor) => (
+    <div role="presentation" onClick={handleClose} onKeyDown={handleClose}>
+      <List>
+        {["Home", "About", "Contact", "Featrues"].map((text, index) => (
+          <ListItem button key={index}>
+            <ListItemText>
+              <Link
+                key={text}
+                to={text === "Home" ? "back-to-top-anchor" : text.toLowerCase()}
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                hashSpy={true}
+                onClick={handleClose}
+              >
+                {text}
+              </Link>
+            </ListItemText>
+          </ListItem>
+        ))}
+      </List>
+    </div>
+  );
+
+  return (
+    <SwipeableDrawer
+      id="swipe-drawer"
+      anchor={anchor}
+      open={open}
+      onClose={handleClose}
+      onOpen={handleOpen}
+    >
+      {list("left")}
+    </SwipeableDrawer>
+  );
+}

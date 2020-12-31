@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.scss";
+import "./App.css";
+import Toolbar from "@material-ui/core/Toolbar";
+import { Component } from "react";
+import HomePage from "./pages/homePage/HomePage";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Toolbar id="back-to-top-anchor" />
+        <HomePage />
+        <ScrollToTop />
+      </div>
+    );
+  }
 }
 
 export default App;
