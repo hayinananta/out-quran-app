@@ -8,7 +8,7 @@ import { Link } from "react-scroll";
 import "./NavDrawer.scss";
 export default function NavDrawer({ anchor, open, handleClose, handleOpen }) {
   // * Items nav
-  const list = (anchor) => (
+  const list = () => (
     <div role="presentation" onClick={handleClose} onKeyDown={handleClose}>
       <List>
         {["Home", "About", "Contact", "Featrues"].map((text, index) => (

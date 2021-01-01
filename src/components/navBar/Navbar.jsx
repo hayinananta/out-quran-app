@@ -29,11 +29,11 @@ function HideOnScroll(props) {
 export default function Navbar(props) {
   // Create state for Nav Drawer
   const [state, setState] = React.useState({
-    left: false,
+    showDrawer: false,
   });
 
   // method for toggle drawer (open/close)
-  const toggleDrawer = (anchor, open) => (event) => {
+  const toggleDrawer = (open) => (event) => {
     if (
       event &&
       event.type === "keydown" &&
@@ -42,7 +42,7 @@ export default function Navbar(props) {
       return;
     }
 
-    setState({ ...state, [anchor]: open });
+    setState({ ...state, showDrawer: open });
   };
 
   return (
@@ -62,7 +62,7 @@ export default function Navbar(props) {
                 </Typography>
 
                 {/* Toggle for open drawer  */}
-                <NavToggle handleOpenDrawer={toggleDrawer("left", true)} />
+                <NavToggle handleOpenDrawer={toggleDrawer(true)} />
 
                 {/* Nav Items when desktop size */}
                 <NavItems />
@@ -75,9 +75,9 @@ export default function Navbar(props) {
       {/* Nav Drawer is nav items when mobile size */}
       <NavDrawer
         anchor="left"
-        open={state["left"]}
-        handleClose={toggleDrawer("left", false)}
-        handleOpen={toggleDrawer("left", true)}
+        open={state["showDrawer"]}
+        handleClose={toggleDrawer(false)}
+        handleOpen={toggleDrawer(true)}
       />
     </>
   );
