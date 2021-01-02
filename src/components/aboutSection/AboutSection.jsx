@@ -1,7 +1,7 @@
 import React from "react";
-import "./About.scss";
+import "./AboutSection.scss";
 
-const About = () => {
+const AboutSection = () => {
   return (
     <section id="about">
       <h1>Its about</h1>
@@ -9,4 +9,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutSection;

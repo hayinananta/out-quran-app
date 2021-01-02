@@ -11,12 +11,12 @@ export default function NavDrawer({ anchor, open, handleClose, handleOpen }) {
   const list = () => (
     <div role="presentation" onClick={handleClose} onKeyDown={handleClose}>
       <List>
-        {["Home", "About", "Contact", "Featrues"].map((text, index) => (
+        {["Home", "Features", "About", "Contact"].map((text, index) => (
           <ListItem button key={index}>
             <ListItemText>
               <Link
                 key={text}
-                to={text === "Home" ? "back-to-top-anchor" : text.toLowerCase()}
+                to={text === "Home" ? "jumbotron-header" : text.toLowerCase()}
                 activeClass="active"
                 spy={true}
                 smooth={true}

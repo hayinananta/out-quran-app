@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import Header from "../../components/header/Header";
 import "./HomePage.scss";
-import About from "../../components/about/About";
+import AboutSection from "../../components/aboutSection/AboutSection";
+import FeaturesSection from "../../components/featuresSection/FeaturesSection";
 class HomePage extends Component {
   render() {
     return (
       <>
         <Header />
-        <About />
+        <FeaturesSection />
+        <AboutSection />
       </>
     );
   }

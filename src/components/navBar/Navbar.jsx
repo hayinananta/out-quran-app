@@ -42,11 +42,18 @@ export default function Navbar(props) {
       return;
     }
 
-    setState({ ...state, showDrawer: open });
+    setState({ showDrawer: open });
   };
 
   return (
     <>
+      {/* Nav Drawer is nav items when mobile size */}
+      <NavDrawer
+        anchor="left"
+        open={state["showDrawer"]}
+        handleClose={toggleDrawer(false)}
+        handleOpen={toggleDrawer(true)}
+      />
       <HideOnScroll {...props}>
         <AppBar id="navbar">
           <Toolbar disableGutters={true}>
@@ -71,14 +78,6 @@ export default function Navbar(props) {
           </Toolbar>
         </AppBar>
       </HideOnScroll>
-
-      {/* Nav Drawer is nav items when mobile size */}
-      <NavDrawer
-        anchor="left"
-        open={state["showDrawer"]}
-        handleClose={toggleDrawer(false)}
-        handleOpen={toggleDrawer(true)}
-      />
     </>
   );
 }

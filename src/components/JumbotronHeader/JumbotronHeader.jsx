@@ -1,24 +1,32 @@
 import React, { Component } from "react";
-import { Button } from "@material-ui/core";
-import "./JumbotronHeader.scss";
+import { Button, Container, Toolbar } from "@material-ui/core";
 import { ReactComponent as BackgroundImage } from "../../assets/images/Hero Image.svg";
+import { Link } from "react-scroll";
+
+import "./JumbotronHeader.scss";
 
 class JumbotronHeader extends Component {
   render() {
     return (
       <section id="jumbotron-header">
-        <div id="back-to-top-anchor" />
-        <div className="tex-box">
-          <h1>
-            A Moslem Daily Worship <br />
-            Read <span>Qur’an</span>
-          </h1>
-          <p>have you read the al-qur’an today ?</p>
-          <Button variant="contained" color="secondary">
-            Get your surah
-          </Button>
-        </div>
-        <BackgroundImage id="hero-image" />
+        <Toolbar />
+        <Container>
+          <div className="jumbotron-header-inner">
+            <div className="tex-box">
+              <h1>
+                A Moslem Daily Worship <br />
+                Read <span>Qur’an</span>
+              </h1>
+              <p>have you read the al-qur’an today ?</p>
+            </div>
+            <Button variant="contained" color="secondary">
+              <Link to="features" smooth={true}>
+                Get your surah
+              </Link>
+            </Button>
+            <BackgroundImage id="hero-image" />
+          </div>
+        </Container>
       </section>
     );
   }

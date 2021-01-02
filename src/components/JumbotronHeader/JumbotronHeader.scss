@@ -1,32 +1,37 @@
-$primary-color: #3e8a8e;
+@import "../../initialStyle";
 
 section#jumbotron-header {
-  display: grid;
-  place-items: center;
-  text-align: center;
-  margin-top: 30px;
+  .jumbotron-header-inner {
+    display: grid;
+    place-items: center;
+    text-align: center;
 
-  svg#hero-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .tex-box {
-    h1 {
-      font-weight: bold;
-      font-size: 54px;
-      line-height: 81px;
-      margin: 52px 0 0 0;
-      font-style: normal;
-
-      span {
-        color: $primary-color;
-      }
+    .MuiButton-root {
+      border-radius: 6px;
+      background-color: #ff4f4f;
+    }
+    svg#hero-image {
+      width: 100%;
+      height: auto;
     }
 
-    p {
-      color: #c0c0c0;
-      margin: 30px 0;
+    .tex-box {
+      h1 {
+        font-weight: bold;
+        font-size: $font-text-1;
+        line-height: 81px;
+        margin: 0;
+        font-style: normal;
+
+        span {
+          color: $color-1;
+        }
+      }
+
+      p {
+        color: #c0c0c0;
+        margin: 30px 0;
+      }
     }
   }
 }

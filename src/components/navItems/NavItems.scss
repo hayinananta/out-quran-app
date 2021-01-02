@@ -1,4 +1,5 @@
-$primary-color: #3e8a8e;
+@import "../../initialStyle";
+
 #nav-items {
   .nav-link {
     cursor: pointer;
@@ -6,11 +7,11 @@ $primary-color: #3e8a8e;
     margin-right: 30px;
 
     &:hover {
-      color: $primary-color;
+      color: $color-1;
     }
 
     &.active {
-      color: $primary-color;
+      color: $color-1;
     }
 
     &:last-child {
