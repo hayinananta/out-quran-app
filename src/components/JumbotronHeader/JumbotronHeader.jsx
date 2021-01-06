@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, Container, Toolbar } from "@material-ui/core";
-import { ReactComponent as BackgroundImage } from "../../assets/images/Hero Image.svg";
+import { ReactComponent as BackgroundImage } from "../../assets/images/backgroundimage.svg";
 import { Link } from "react-scroll";
 
 import "./JumbotronHeader.scss";
