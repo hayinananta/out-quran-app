@@ -26,34 +26,9 @@ function HideOnScroll(props) {
   );
 }
 
-export default function Navbar(props) {
-  // Create state for Nav Drawer
-  const [state, setState] = React.useState({
-    showDrawer: false,
-  });
-
-  // method for toggle drawer (open/close)
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event &&
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setState({ showDrawer: open });
-  };
-
+function Navbar({ handleToggle, ...props }) {
   return (
     <>
-      {/* Nav Drawer is nav items when mobile size */}
-      <NavDrawer
-        anchor="left"
-        open={state["showDrawer"]}
-        handleClose={toggleDrawer(false)}
-        handleOpen={toggleDrawer(true)}
-      />
       <HideOnScroll {...props}>
         <AppBar id="navbar">
           <Toolbar disableGutters={true}>
@@ -68,8 +43,8 @@ export default function Navbar(props) {
                   Our<span>Qur'an</span>
                 </Typography>
 
-                {/* Toggle for open drawer  */}
-                <NavToggle handleOpenDrawer={toggleDrawer(true)} />
+                {/* Toggle for open drawer when mobile size*/}
+                <NavToggle handleOpenDrawer={handleToggle(true)} />
 
                 {/* Nav Items when desktop size */}
                 <NavItems />
@@ -81,3 +56,5 @@ export default function Navbar(props) {
     </>
   );
 }
+
+export default Navbar;

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Container } from "@material-ui/core";
 import "./FeaturesSection.scss";
 import FeatureAlQuran from "../featureAlQuran/FeatureAlQuran";
 import FeatureAsmaulHusna from "../featureAsmaulHusna/FeatureAsmaulHusna";
@@ -37,26 +36,24 @@ class FeaturesSection extends Component {
     return (
       <section id="features">
         <div className="features-inner">
-          <Container>
-            <div id="tab-options">
-              <span
-                className="tab-item tab-active"
-                onClick={this.handleClick}
-                data-index="0"
-              >
-                Surah
-              </span>
-              <span
-                className="tab-item"
-                onClick={this.handleClick}
-                data-index="1"
-              >
-                Asmaul Husna
-              </span>
-            </div>
+          <div id="tab-options">
+            <span
+              className="tab-item tab-active"
+              onClick={this.handleClick}
+              data-index="0"
+            >
+              Surah
+            </span>
+            <span
+              className="tab-item"
+              onClick={this.handleClick}
+              data-index="1"
+            >
+              Asmaul Husna
+            </span>
+          </div>
 
-            {this.handleTabsOption()}
-          </Container>
+          {this.handleTabsOption()}
         </div>
       </section>
     );

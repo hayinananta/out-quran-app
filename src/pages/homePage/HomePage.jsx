@@ -1,14 +1,18 @@
 import React, { Component } from "react";
-import Header from "../../components/header/Header";
 import "./HomePage.scss";
 import AboutSection from "../../components/aboutSection/AboutSection";
 import FeaturesSection from "../../components/featuresSection/FeaturesSection";
+import JumbotronHeader from "../../components/JumbotronHeader/JumbotronHeader";
+import { Container } from "@material-ui/core";
+
 class HomePage extends Component {
   render() {
     return (
       <>
-        <Header />
-        <FeaturesSection />
+        <JumbotronHeader />
+        <Container>
+          <FeaturesSection />
+        </Container>
         <AboutSection />
       </>
     );
