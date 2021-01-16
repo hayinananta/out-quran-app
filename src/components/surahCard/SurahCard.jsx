@@ -11,7 +11,7 @@ const SurahCard = ({ number, englishName, englishNameTranslation, name }) => {
 
   return (
     <>
-      <Grid item xs={12} sm={4}>
+      <Grid item xs={12} sm={6} md={4}>
         <div className="surah-collection-item">
           <div className="surah-detail">
             <h3>{`${number}. ${englishName}`}</h3>
