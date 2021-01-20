@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 import Grid from "@material-ui/core/Grid";
@@ -17,33 +17,31 @@ const mapStateToProps = (state) => {
   };
 };
 
-class FeatureAlQuran extends Component {
-  render() {
-    const { items, error, loading, searchField } = this.props;
-    if (error) return <ErrorHandle />;
+const FeatureAlQuran = (props) => {
+  const { items, error, loading, searchField } = props;
+  if (error) return <ErrorHandle />;
 
-    // Filtering surah with search field
-    const filteredSurah = items.filter((surah) =>
-      surah.englishName.toLowerCase().includes(searchField.toLowerCase())
-    );
+  // Filtering surah with search field
+  const filteredSurah = items.filter((surah) =>
+    surah.englishName.toLowerCase().includes(searchField.toLowerCase())
+  );
 
-    return (
-      <>
-        <div className="search-container">
-          <SearchBox />
-        </div>
-        <Grid container spacing={3}>
-          {loading ? (
-            <SurahCardSkeleton />
-          ) : (
-            filteredSurah.map((props) => (
-              <SurahCard key={props.number} {...props} />
-            ))
-          )}
-        </Grid>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <div className="search-container">
+        <SearchBox />
+      </div>
+      <Grid container spacing={3}>
+        {loading ? (
+          <SurahCardSkeleton />
+        ) : (
+          filteredSurah.map((props) => (
+            <SurahCard key={props.number} {...props} />
+          ))
+        )}
+      </Grid>
+    </>
+  );
+};
 
 export default connect(mapStateToProps)(FeatureAlQuran);
