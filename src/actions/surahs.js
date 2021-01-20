@@ -1,7 +1,7 @@
 import axios from "axios";
 import { baseUrl } from "../assets/API/baseUrl";
 
-export const getSurahs = () => {
+export const setSurahs = () => {
   return (dispatch) => {
     dispatch(initDataStarted());
     axios

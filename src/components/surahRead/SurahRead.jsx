@@ -1,34 +1,53 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
 import { Container, Toolbar } from "@material-ui/core";
 import "./SurahRead.scss";
+import AyahCard from "../ayahCard/AyahCard";
+import SurahReadTitle from "../surahReadTitle/SurahReadTitle";
+import AyahCardSkeleton from "../ayahCardSkeleton/AyahCardSkeleton";
+const mapStateToProps = (state) => {
+  return {
+    items: state.surah.items,
+    error: state.surah.error,
+    loading: state.surah.loading,
+  };
+};
 
 class SurahRead extends Component {
   render() {
+    const { items, error, loading } = this.props;
     return (
       <section id="surah-read" className="top-page">
         <Container>
           <Toolbar />
-          {/* {dataAyahs.map((ayah) => (
+          <SurahReadTitle />
+          {loading ? (
             <>
-              <div id="title">
-                <h2>{surah.englishName}</h2>
-                <p>{surah.englishNameTranslation}</p>
-              </div>
-              {surah.ayahs.map((ayah) => (
-                <div className="card-ayah">
-                  <div className="title">
-                    <span className="number-surah"></span>
-                    <p className="text-transliteration"></p>
-                    <p className="text-translation"></p>
-                  </div>
-                  <div className="text-arab"></div>
-                </div>
-              ))}
-          ))} */}
+              <AyahCardSkeleton />
+              <AyahCardSkeleton />
+              <AyahCardSkeleton />
+              <AyahCardSkeleton />
+              <AyahCardSkeleton />
+            </>
+          ) : (
+            items[0].ayahs.map((ayah) => {
+              console.log(items);
+              return (
+                <AyahCard
+                  key={ayah.number}
+                  surahNumber={items[0].number}
+                  {...ayah}
+                  textTranslation={items[1].ayahs}
+                  textTransliteration={items[2].ayahs}
+                />
+              );
+            })
+          )}
         </Container>
       </section>
     );
   }
 }
 
-export default SurahRead;
+export default connect(mapStateToProps)(SurahRead);

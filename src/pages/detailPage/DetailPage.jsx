@@ -1,16 +1,22 @@
 import React, { Component } from "react";
 import Header from "../../components/header/Header";
 import SurahRead from "../../components/surahRead/SurahRead";
-import { useParams } from "react-router-dom";
-const DetailPage = () => {
-  let { surahId } = useParams();
-  console.log(surahId);
-  return (
-    <>
-      <Header urlPage="alquran" />
-      <SurahRead />
-    </>
-  );
-};
+import { connect } from "react-redux";
+import { setSurah } from "../../actions/surah";
+class DetailPage extends Component {
+  componentDidMount() {
+    const { surahId } = this.props.match.params;
+    this.props.dispatch(setSurah(surahId));
+  }
 
-export default DetailPage;
+  render() {
+    return (
+      <>
+        <Header urlPage="alquran" />
+        <SurahRead />
+      </>
+    );
+  }
+}
+
+export default connect()(DetailPage);

@@ -12,11 +12,11 @@
   &:hover {
     background-color: $color-1;
     .surah-detail {
-      h3 {
+      .text-transliteration {
         color: #ffffff;
       }
 
-      p {
+      .text-translation {
         color: #ffffff;
       }
     }
@@ -29,7 +29,7 @@
   }
 
   .surah-detail {
-    h3 {
+    .text-transliteration {
       font-size: $h3;
       font-style: normal;
       font-weight: 500;
@@ -37,7 +37,7 @@
       color: $color-1;
     }
 
-    p {
+    .text-translation {
       font-size: $h6;
       font-style: normal;
       font-weight: 300;
@@ -48,7 +48,7 @@
 
   .surah-name {
     h3 {
-      font-family: Lateef;
+      font-family: "Lateef";
       font-style: normal;
       font-weight: normal;
       font-size: $text-size-arab-1;

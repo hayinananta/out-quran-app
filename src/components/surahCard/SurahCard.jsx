@@ -28,8 +28,8 @@ const SurahCard = (props) => {
         onClick={handleClick}
       >
         <div className="surah-detail">
-          <h3>{`${number}. ${englishName}`}</h3>
-          <p>{englishNameTranslation}</p>
+          <h3 className="text-transliteration">{`${number}. ${englishName}`}</h3>
+          <p className="text-translation">{englishNameTranslation}</p>
         </div>
         <div className="surah-name">
           <h3>{handleSurahName(name)}</h3>

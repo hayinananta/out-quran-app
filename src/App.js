@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { getSurahs } from "./actions/surahs";
+import { setSurahs } from "./actions/surahs";
 
 import Footer from "./components/footer/Footer";
 import HomePage from "./pages/homePage/HomePage";
@@ -12,7 +12,7 @@ import DetailPage from "./pages/detailPage/DetailPage";
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch(getSurahs());
+    this.props.dispatch(setSurahs());
   }
 
   render() {
@@ -24,9 +24,7 @@ class App extends Component {
             <Route exact path="/alquran">
               <Redirect to="/" />
             </Route>
-            <Route path="/alquran/:surahId">
-              <DetailPage />
-            </Route>
+            <Route path="/alquran/:surahId" component={DetailPage} />
             <Route path="*" component={NoMatch} />
           </Switch>
           <Footer />
