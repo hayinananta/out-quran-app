@@ -1,7 +1,7 @@
 import axios from "axios";
 import { baseUrl } from "../assets/API/baseUrl";
 
-export const getSurah = (surahId) => {
+export const getSurahs = () => {
   return (dispatch) => {
     dispatch(initDataStarted());
     axios
@@ -16,14 +16,14 @@ export const getSurah = (surahId) => {
 };
 
 const initData = (items) => ({
-  type: "INIT_DATA_SURAH",
+  type: "INIT_DATA_SURAHS",
   payload: { items },
 });
 
 const initDataStarted = () => ({
-  type: "INIT_DATA_STARTED_SURAH",
+  type: "INIT_DATA_STARTED_SURAHS",
 });
 
 const initDataFailed = () => ({
-  type: "INIT_DATA_FAILED_SURAH",
+  type: "INIT_DATA_FAILED_SURAHS",
 });

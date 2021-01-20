@@ -16,7 +16,6 @@ class FeaturesSection extends Component {
     header.querySelector(".tab-active").classList.toggle("tab-active");
     event.target.classList.toggle("tab-active");
     const tabIndex = event.target.getAttribute("data-index");
-    console.log(tabIndex);
     if (tabIndex === "0") this.setState({ tabsOption: 0 });
     if (tabIndex === "1") this.setState({ tabsOption: 1 });
   };

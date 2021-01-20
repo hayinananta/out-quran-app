@@ -3,19 +3,14 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
 import Grid from "@material-ui/core/Grid";
 
-import NavToggle from "../navToggle/NavToggle";
-import NavDrawer from "../navDrawer/NavDrawer";
-import NavItems from "../navItems/NavItems";
-
 import "./Navbar.scss";
 
-// Function for hide on scroll
-function HideOnScroll(props) {
+// Method for hide on scroll
+const HideOnScroll = (props) => {
   const { children } = props;
   const trigger = useScrollTrigger();
 
@@ -24,9 +19,9 @@ function HideOnScroll(props) {
       {children}
     </Slide>
   );
-}
+};
 
-function Navbar({ handleToggle, ...props }) {
+const Navbar = ({ handleToggle, ...props }) => {
   return (
     <>
       <HideOnScroll {...props}>
@@ -39,15 +34,7 @@ function Navbar({ handleToggle, ...props }) {
                 justify="space-between"
                 alignItems="center"
               >
-                <Typography id="logo-brand" variant="h4">
-                  Our<span>Qur'an</span>
-                </Typography>
-
-                {/* Toggle for open drawer when mobile size*/}
-                <NavToggle handleOpenDrawer={handleToggle(true)} />
-
-                {/* Nav Items when desktop size */}
-                <NavItems />
+                {props.children}
               </Grid>
             </Container>
           </Toolbar>
@@ -55,6 +42,6 @@ function Navbar({ handleToggle, ...props }) {
       </HideOnScroll>
     </>
   );
-}
+};
 
 export default Navbar;

@@ -1,10 +1,15 @@
-import React from "react";
-
+import React, { Component } from "react";
+import Header from "../../components/header/Header";
+import SurahRead from "../../components/surahRead/SurahRead";
+import { useParams } from "react-router-dom";
 const DetailPage = () => {
+  let { surahId } = useParams();
+  console.log(surahId);
   return (
-    <div>
-      <h1>It's detail page</h1>
-    </div>
+    <>
+      <Header urlPage="alquran" />
+      <SurahRead />
+    </>
   );
 };
 

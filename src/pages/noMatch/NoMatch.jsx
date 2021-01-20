@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Container from "@material-ui/core/Container";
 
-class NotFoundPage extends Component {
+class NoMatch extends Component {
   render() {
     return (
       <>
@@ -13,4 +13,4 @@ class NotFoundPage extends Component {
   }
 }
 
-export default NotFoundPage;
+export default NoMatch;

@@ -8,7 +8,7 @@ const SurahCardSkeleton = () => {
     <>
       {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((value) => (
         <Grid key={value} item xs={12} sm={6} md={4}>
-          <div className="surah-collection-item">
+          <div className="surah-collection-item-skleton">
             <dv className="surah-detail">
               <h3>
                 <Skeleton

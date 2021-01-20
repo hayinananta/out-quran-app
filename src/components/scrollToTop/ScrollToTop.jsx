@@ -20,7 +20,7 @@ function ScrollTop(props) {
 
   const handleClick = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector(
-      "#jumbotron-header"
+      ".top-page"
     );
 
     if (anchor) {

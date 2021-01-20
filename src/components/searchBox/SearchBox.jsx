@@ -7,9 +7,9 @@ import { getSearchField } from "../../actions/searchSurah";
 
 const mapStateToProps = (state) => {
   return {
-    items: state.surah.items,
-    error: state.surah.error,
-    loading: state.surah.loading,
+    items: state.surahs.items,
+    error: state.surahs.error,
+    loading: state.surahs.loading,
   };
 };
 

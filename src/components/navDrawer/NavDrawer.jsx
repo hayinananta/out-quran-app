@@ -22,6 +22,7 @@ export default function NavDrawer({ anchor, open, handleClose, handleOpen }) {
                 smooth={true}
                 hashSpy={true}
                 onClick={handleClose}
+                isDynamic={true}
               >
                 {text}
               </Link>
