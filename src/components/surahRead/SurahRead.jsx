@@ -17,6 +17,9 @@ const mapStateToProps = (state) => {
 class SurahRead extends Component {
   render() {
     const { items, error, loading } = this.props;
+    if (error) {
+      return <h1>Upss.... Something wrong</h1>;
+    }
     return (
       <section id="surah-read" className="top-page">
         <Container>
@@ -32,7 +35,6 @@ class SurahRead extends Component {
             </>
           ) : (
             items[0].ayahs.map((ayah) => {
-              console.log(items);
               return (
                 <AyahCard
                   key={ayah.number}

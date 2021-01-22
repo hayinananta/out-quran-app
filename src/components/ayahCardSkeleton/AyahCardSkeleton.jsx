@@ -2,9 +2,7 @@ import React from "react";
 import Skeleton from "@material-ui/lab/Skeleton";
 
 import "./AyahCardSkeleton.scss";
-const AyahCardSkeleton = (props) => {
-  console.log(props);
-  const { text } = props;
+const AyahCardSkeleton = () => {
   return (
     <div className="ayah-card-skeleton">
       <div className="title">

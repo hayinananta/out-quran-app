@@ -26,7 +26,6 @@ const Header = (props) => {
     setState({ showDrawer: open });
   };
 
-  console.log(props);
   return (
     <>
       {/* Nav Drawer is nav items when mobile size */}

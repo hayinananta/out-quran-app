@@ -2,6 +2,7 @@ import { Component } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { setSurahs } from "./actions/surahs";
+import { setAsmaulhusna } from "./actions/asmaulhusna";
 
 import Footer from "./components/footer/Footer";
 import HomePage from "./pages/homePage/HomePage";
@@ -13,6 +14,7 @@ import DetailPage from "./pages/detailPage/DetailPage";
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(setSurahs());
+    this.props.dispatch(setAsmaulhusna());
   }
 
   render() {
