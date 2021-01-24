@@ -6,6 +6,7 @@ import "./SurahRead.scss";
 import AyahCard from "../ayahCard/AyahCard";
 import SurahReadTitle from "../surahReadTitle/SurahReadTitle";
 import AyahCardSkeleton from "../ayahCardSkeleton/AyahCardSkeleton";
+import ErrorHandle from "../error/ErrorHandle";
 const mapStateToProps = (state) => {
   return {
     items: state.surah.items,
@@ -17,9 +18,8 @@ const mapStateToProps = (state) => {
 class SurahRead extends Component {
   render() {
     const { items, error, loading } = this.props;
-    if (error) {
-      return <h1>Upss.... Something wrong</h1>;
-    }
+    if (error) return <ErrorHandle />;
+
     return (
       <section id="surah-read" className="top-page">
         <Container>

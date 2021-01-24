@@ -27,20 +27,24 @@ const FeatureAlQuran = (props) => {
   );
 
   return (
-    <>
+    <section>
       <div className="search-container">
         <SearchBox />
       </div>
       <Grid container spacing={3}>
         {loading ? (
-          <SurahCardSkeleton />
+          <>
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((value) => (
+              <SurahCardSkeleton key={value} />
+            ))}
+          </>
         ) : (
           filteredSurah.map((props) => (
             <SurahCard key={props.number} {...props} />
           ))
         )}
       </Grid>
-    </>
+    </section>
   );
 };
 

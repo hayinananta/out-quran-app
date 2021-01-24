@@ -1,0 +1,29 @@
+@import "../../initialStyle";
+
+.asmaulhusna-collection-item {
+  @include card-box;
+  text-align: center;
+  padding: 20px;
+
+  .text-asmaulhusna {
+    font-family: "Lateef";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 93px;
+  }
+
+  .text-transliteration {
+    font-style: normal;
+    font-weight: 500;
+    font-size: $h4;
+    color: $color-1;
+  }
+
+  .text-translation {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14x;
+  }
+}
