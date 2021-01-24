@@ -10,4 +10,20 @@
       color: $color-1;
     }
   }
+
+  #back-to-home {
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $color-2;
+      font-size: $h3;
+      span {
+        font-size: $h2;
+      }
+      &:hover {
+        color: $color-1;
+      }
+    }
+  }
 }

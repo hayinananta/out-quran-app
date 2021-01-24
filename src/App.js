@@ -1,29 +1,35 @@
 import { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { getSurah } from "./actions/surah";
+import { setSurahs } from "./actions/surahs";
+import { setAsmaulhusna } from "./actions/asmaulhusna";
 
+import Footer from "./components/footer/Footer";
 import HomePage from "./pages/homePage/HomePage";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
-import Header from "./components/header/Header";
-import NotFound from "./pages/notFoundPage/NotFoundPage.";
+import NoMatch from "./pages/noMatch/NoMatch";
 
-import "./App.css";
+import DetailPage from "./pages/detailPage/DetailPage";
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch(getSurah());
+    this.props.dispatch(setSurahs());
+    this.props.dispatch(setAsmaulhusna());
   }
 
   render() {
     return (
       <div className="App">
         <BrowserRouter>
-          <Header />
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route component={NotFound} />
+            <Route exact path="/alquran">
+              <Redirect to="/" />
+            </Route>
+            <Route path="/alquran/:surahId" component={DetailPage} />
+            <Route path="*" component={NoMatch} />
           </Switch>
+          <Footer />
         </BrowserRouter>
         <ScrollToTop />
       </div>

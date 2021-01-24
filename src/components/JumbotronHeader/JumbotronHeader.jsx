@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, Container, Toolbar } from "@material-ui/core";
-import { ReactComponent as BackgroundImage } from "../../assets/images/backgroundimage.svg";
+import { ReactComponent as BackgroundImage } from "../../assets/images/BackgroundImage.svg";
 import { Link } from "react-scroll";
 
 import "./JumbotronHeader.scss";
@@ -8,7 +8,7 @@ import "./JumbotronHeader.scss";
 class JumbotronHeader extends Component {
   render() {
     return (
-      <section id="jumbotron-header">
+      <section id="jumbotron-header" className="top-page">
         <Toolbar />
         <Container>
           <div className="jumbotron-header-inner">

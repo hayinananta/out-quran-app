@@ -1,13 +1,15 @@
 import axios from "axios";
 import { baseUrl } from "../assets/API/baseUrl";
 
-export const getSurah = () => {
+export const setSurah = (surahId) => {
   return (dispatch) => {
     dispatch(initDataStarted());
     axios
-      .get(`${baseUrl}quran/ar.abdulbasitmurattal`)
+      .get(
+        `${baseUrl}surah/${surahId}/editions/ar.abdulbasitmurattal,en.ahmedali,en.transliteration`
+      )
       .then((res) => {
-        dispatch(initData(res.data.data.surahs));
+        dispatch(initData(res.data.data));
       })
       .catch((err) => {
         dispatch(initDataFailed());

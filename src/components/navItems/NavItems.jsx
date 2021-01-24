@@ -16,6 +16,7 @@ export default function NavItems() {
             spy={true}
             smooth={true}
             className="nav-link"
+            isDynamic={true}
           >
             {text}
           </Link>

@@ -7,20 +7,16 @@ import { getSearchField } from "../../actions/searchSurah";
 
 const mapStateToProps = (state) => {
   return {
-    items: state.surah.items,
-    error: state.surah.error,
-    loading: state.surah.loading,
+    items: state.surahs.items,
+    error: state.surahs.error,
+    loading: state.surahs.loading,
+    searchField: state.searchSurah.searchField,
   };
 };
 
 const SearchBox = (props) => {
   const [open, setOpen] = React.useState(false);
   const loading = open && props.loading;
-
-  // handle input manual change
-  const handleChange = (event) => {
-    props.dispatch(getSearchField(event.target.value));
-  };
 
   // handle input auto change
   const handleInputChange = (event, value) => {
@@ -45,12 +41,12 @@ const SearchBox = (props) => {
       options={props.items}
       loading={loading}
       onInputChange={handleInputChange}
+      inputValue={props.searchField}
       renderInput={(params) => (
         <TextField
           {...params}
           label="search surah"
           variant="outlined"
-          onChange={handleChange}
           InputProps={{
             ...params.InputProps,
             endAdornment: (
